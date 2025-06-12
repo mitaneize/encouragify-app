@@ -9,14 +9,14 @@ def render_diary_ui():
     LOG_FILE = os.path.join(LOG_DIR, "log.csv")
     today = datetime.now().strftime("%Y-%m-%d")
 
-    st.subheader("📔 今日の日記")
+    st.subheader("📔 ひとこと日記")
 
     moods = {
         "😀": "ごきげん", "😊": "良い", "😐": "ふつう", "😴": "ねむい",
         "😔": "かなしい", "😡": "イライラ", "🤪": "ハイ", "🥳": "やりきった"
     }
     selected = st.radio("気分", list(moods.keys()), horizontal=True)
-    text = st.text_area("日記を書く", height=200).strip()
+    text = st.text_input("今日の日記").strip()
     if st.button("💾 日記を保存する"):
         if text == "":
             text = "(記入なし)"
