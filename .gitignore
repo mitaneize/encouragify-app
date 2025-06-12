@@ -8,6 +8,8 @@ __pycache__/
 
 # misc data
 diary/
+./encouragify.db
+
 
 # Distribution / packaging
 .Python
